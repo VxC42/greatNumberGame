@@ -1,0 +1,43 @@
+<html>
+<head>
+     <title> Great Number Game</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylesGame.css') }}">
+     <!-- <link rel="stylesheet" type="text/css" href="../static/css/stylesGame.css"> -->
+</head>
+<body>
+     <div>
+          <h1>Welcome to the Great Number Game</h1>
+          <p>I am thinking of a number between 1 and 100</p>
+          <p>Take a guess!</p>
+          {% with messages = get_flashed_messages() %}
+               {% if messages %}
+                    {% for message in messages %}
+                         {% if message =='1'%}
+                              <div class='greenContainer'>
+                                   <span class='greenText'>
+                                        YOU GOT IT!
+                                   </span>
+                                   <p>
+                                        <form class="" action="/new" method="post">
+                                             <input type = "submit" value="Play Again?">
+                                        </form>
+                                   </p>
+                              </div>
+                         {%elif message=='2'%}
+                              <div class='redContainer'>
+                                   <span class='redText'>Too Low</span>
+                              </div>
+                         {%elif message=='3'%}
+                              <div class='redContainer'>
+                                   <span class='redText'>Too High</span>
+                              </div>
+                         {%endif%}
+                    {% endfor %}
+               {% endif %}
+          {% endwith %}
+          <form class="" action="/submit" method="POST">
+               <input class="guess" type="text" name="guess">
+               <p><input type = "submit" value="Guess"></p>
+          </form>
+     </div>
+</body>

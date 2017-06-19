@@ -1,0 +1,34 @@
+div{
+     width:100%;
+     text-align: center;
+     font-family: sans-serif;
+
+}
+.greenContainer{
+     display: inline-block;
+     width: 250px;
+     height: 250px;
+     border: 2px solid black;
+     text-align: center;
+     margin-bottom: 15px;
+     font-size: 150%;
+     background-color: green;
+}
+
+.redContainer{
+     display: inline-block;
+     width: 250px;
+     height: 250px;
+     border: 2px solid black;
+     text-align: center;
+     margin-bottom: 15px;
+     font-size: 150%;
+     background-color: red;
+}
+
+.greenText, .redText{
+     margin-top: 100px;
+     display: block;
+     vertical-align: middle;
+     color: #ffffff;
+}
